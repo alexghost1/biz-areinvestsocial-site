@@ -1,0 +1,53 @@
+/* A.R.E. V2 — tokens del sistema visual.
+   Paleta derivada de la biblia del edificio: piedra caliza, roble, bronce oscuro, vidrio; noche cálida para el recorrido. */
+:root {
+  /* Color */
+  --ink: #0c0b0a;          /* noche cálida: fondo del recorrido */
+  --ink-2: #161412;
+  --ink-3: #221f1b;
+  --bone: #f2eee7;         /* caliza apomazada: fondo editorial */
+  --stone: #e4ded3;
+  --stone-2: #cfc7b9;
+  --oak: #8a6a48;
+  --bronze: #b4935f;       /* acento único */
+  --bronze-deep: #7d6440;
+  --glass: #8f9a93;
+
+  --on-dark: #f1ebe1;
+  --on-dark-2: rgba(241, 235, 225, 0.68);
+  --on-dark-3: rgba(241, 235, 225, 0.42);
+  --line-dark: rgba(241, 235, 225, 0.16);
+  --on-light: #161412;
+  --on-light-2: #57504a;
+  --on-light-3: #8a8279;
+  --line-light: rgba(22, 20, 18, 0.14);
+
+  /* Tipografía */
+  --f-display: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --f-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --t-display: clamp(2.7rem, 1.2rem + 5.4vw, 7rem);
+  --t-h2: clamp(2.1rem, 1.1rem + 3.2vw, 4.4rem);
+  --t-h3: clamp(1.35rem, 1.1rem + 0.8vw, 1.85rem);
+  --t-lead: clamp(1.05rem, 0.95rem + 0.42vw, 1.32rem);
+  --t-body: 1rem;
+  --t-small: 0.875rem;
+  --t-label: 0.7rem;
+  --track-label: 0.24em;
+
+  /* Espacio (escala 4/8) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px;
+  --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px; --s-11: 192px;
+  --gutter: clamp(20px, 4.2vw, 64px);
+  --maxw: 1440px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --d-1: 160ms; --d-2: 320ms; --d-3: 700ms; --d-4: 1200ms;
+
+  /* Recorrido */
+  --journey-length: 6.5;   /* altura del recorrido en pantallas (6 masters, 5 cortes) */
+}
+@media (max-width: 760px) {
+  :root { --journey-length: 5.5; }
+}

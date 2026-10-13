@@ -1,0 +1,174 @@
+/* A.R.E. — iteración de convergencia: marca, héroe, capítulos, máscaras, menú móvil. Se carga después de site.css. */
+/* Marca */
+.brand__logo{width:46px;height:24px;color:var(--on-dark);flex:none}
+.brand__r{stroke:var(--bronze)}
+.brand__door{color:var(--on-dark)}
+.brand__text{display:inline-flex;flex-direction:column;line-height:1}
+.brand__mark{font-size:1.18rem;letter-spacing:.16em}
+.brand__name{margin-top:4px;font-size:.56rem;letter-spacing:.42em}
+/* Héroe */
+.panel--hero{bottom:clamp(64px,10vh,120px);max-width:44rem}
+.panel--hero .display{font-size:clamp(2.4rem,1rem + 3.6vw,4.9rem);line-height:.94;letter-spacing:.005em}
+.panel--hero .lead{max-width:30rem;margin-top:var(--s-4);font-size:clamp(.98rem,.9rem + .3vw,1.12rem)}
+.panel--wide{max-width:40rem}
+.panel.is-past{transform:translate3d(0,-22px,0)}
+.body--small{margin-top:var(--s-5);font-size:.88rem;color:var(--on-dark-3)}
+.stage__dim{position:absolute;inset:0;background:var(--ink);opacity:0;pointer-events:none}
+.scroll-cue{display:grid;justify-items:center;gap:10px;width:auto;height:auto;background:none;transform:translateX(-50%);overflow:visible}
+.scroll-cue__label{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--on-dark-3)}
+.scroll-cue__line{position:relative;display:block;width:1px;height:44px;background:var(--line-dark);overflow:hidden}
+.scroll-cue__line span{position:absolute;inset:0;background:var(--on-dark);animation:cue 2.2s var(--ease-io) infinite}
+.is-reduced .scroll-cue__line span{animation:none}
+.scroll-cue>.scroll-cue__label{position:static;inset:auto;background:none;animation:none}
+.scroll-cue>.scroll-cue__line{position:relative;inset:auto;animation:none}
+/* Áreas de S02 */
+.axes a{display:grid;grid-template-columns:2.6em 1fr auto;align-items:baseline}
+.axes__go{opacity:0;transform:translateX(-6px);transition:opacity var(--d-2),transform var(--d-2) var(--ease-out);color:var(--bronze)}
+.axes a:hover .axes__go,.axes a:focus-visible .axes__go{opacity:1;transform:none}
+/* Índice de capítulos (escritorio) */
+.chapters{position:fixed;left:14px;top:50%;transform:translate(-12px,-50%);z-index:30;display:grid;gap:14px;opacity:0;pointer-events:none;transition:opacity var(--d-3) var(--ease-out),transform var(--d-3) var(--ease-out);mix-blend-mode:difference}
+.chapters.is-on{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+.chapters a{position:relative;display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--bronze);opacity:.6;font-size:0;letter-spacing:.14em;text-transform:uppercase;transition:opacity var(--d-2)}
+.chapters a:hover,.chapters a:focus-visible{opacity:1;font-size:.66rem}
+.chapters a:hover,.chapters a:focus-visible{background:var(--ink);color:var(--on-dark);padding:2px 8px 2px 0}
+.chapters a span{font-family:var(--f-display);font-size:.9rem;letter-spacing:.02em}
+.chapters a[aria-current]{opacity:1}
+.chapters a[aria-current]::before{content:"";position:absolute;left:-14px;top:.55em;width:9px;height:1px;background:currentColor}
+@media (max-width:1100px){.chapters{display:none}}
+/* Capítulos */
+.area{position:relative}
+.area--dark{background:var(--ink);color:var(--on-dark)}
+.area__body,.contact__body,.vision__body{position:relative}
+.chapter-no{position:absolute;top:-.62em;left:-.04em;font-family:var(--f-display);font-size:clamp(6rem,3rem + 10vw,13rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(241,235,225,.13);pointer-events:none;user-select:none;z-index:0}
+.chapter-no--dark{-webkit-text-stroke:1px rgba(22,20,18,.12)}
+.area__body>*:not(.chapter-no),.vision__body>*:not(.chapter-no),.contact__body>*:not(.chapter-no){position:relative;z-index:1}
+.area--dark .h2{color:var(--on-dark)}
+.text--dark{color:var(--on-dark-2)}
+.text--small{font-size:.9rem}
+.link--dark{color:var(--on-light)}
+.label{margin-bottom:8px;font-size:var(--t-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-2)}
+.steps{list-style:none;padding:0;margin:0 0 var(--s-6);display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-dark)}
+.steps li{padding:14px 16px 0 0;font-size:.92rem;color:var(--on-dark)}
+.steps li+li{padding-left:16px;border-left:1px solid var(--line-dark)}
+.steps span{display:block;margin-bottom:6px;font-family:var(--f-display);color:var(--bronze);font-size:1.1rem}
+.scope{margin-bottom:var(--s-5);padding:var(--s-4) var(--s-5);border:1px solid var(--line-dark);max-width:40rem}
+.area--dark .pending{color:var(--on-dark-3)}
+.tags{list-style:none;padding:0;margin:0 0 var(--s-5);display:flex;flex-wrap:wrap;gap:8px}
+.tags li{padding:7px 14px;border:1px solid var(--line-dark);font-size:.82rem;color:var(--on-dark-2);transition:border-color var(--d-2),color var(--d-2)}
+.tags li:hover{border-color:var(--bronze);color:var(--on-dark)}
+.limits{list-style:none;padding:0;margin-top:var(--s-6);display:grid;gap:8px;max-width:36rem}
+.limits li{position:relative;padding-left:24px;color:var(--on-dark-2);font-size:.92rem}
+.limits li::before{content:"";position:absolute;left:0;top:.75em;width:12px;height:1px;background:var(--bronze)}
+.vision__body .chapter-no{top:-.7em}
+/* Máscara de entrada de las imágenes de capítulo */
+.mask{clip-path:inset(14% 10% 14% 10%);transition:clip-path 1.4s var(--ease-out)}
+.mask.is-open{clip-path:inset(0 0 0 0)}
+.is-reduced .mask{clip-path:none;transition:none}
+/* Menú móvil (sin JS: <details>) */
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:grid;place-content:center;gap:6px;border:1px solid var(--line-dark)}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary span{display:block;width:18px;height:1px;background:var(--on-dark);transition:transform var(--d-2) var(--ease-out)}
+.menu[open] summary span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu[open] summary span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.menu__panel{position:fixed;left:0;right:0;top:64px;display:grid;padding:8px 16px 20px;background:rgba(12,11,10,.96);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-dark)}
+.menu__panel a{padding:15px 0;border-bottom:1px solid var(--line-dark);text-decoration:none;font-family:var(--f-display);font-size:1.25rem}
+/* Hoja de marca (interna) */
+.doc--wide{max-width:72rem}
+.brand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:var(--s-6);margin:var(--s-6) 0}
+.brand-card .label{color:var(--on-light-2)}
+.brand-card__stage{display:flex;align-items:center;gap:14px;min-height:150px;padding:var(--s-6);background:var(--ink);color:var(--on-dark)}
+.brand-card__sym{width:56px;height:56px;flex:none}
+.brand-card__word{font-family:var(--f-display);font-size:.82rem;letter-spacing:.34em}
+.brand-card__word b{display:block;font-weight:400;font-size:1.6rem;letter-spacing:.16em;margin-bottom:4px}
+.brand-card__word--solo i{display:block;width:40px;height:1px;background:var(--bronze);margin:10px 0}
+.brand-card__sizes{display:flex;align-items:center;gap:18px;padding:var(--s-4) 0}
+.mini-word{font-family:var(--f-display);font-size:.7rem;letter-spacing:.14em}
+/* Móvil */
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr}
+  .steps li+li{padding-left:0;border-left:0;border-top:1px solid var(--line-dark);padding-top:12px}
+}
+@media (max-width:640px){
+  .site-nav{display:none}
+  .menu{display:block}
+  .brand__logo{width:40px;height:21px}
+  .panel--hero{bottom:120px}
+  .panel--hero .display{font-size:clamp(2.1rem,10.2vw,3rem)}
+  .panel,.panel--hero{right:16px}
+  .rail{display:none}
+  .menu__panel{bottom:0;align-content:start;overflow:auto}
+  .panel__actions .btn{min-height:48px}
+  .axes a{min-height:48px;align-items:center}
+  .scroll-cue{bottom:14px}
+  .scroll-cue__label{display:none}
+  .chapter-no{font-size:5.5rem;top:-.45em}
+  .area{padding-top:88px;padding-bottom:88px}
+  .contact__mail{font-size:1.4rem}
+}
+
+/* S00 · apertura de marca: el trazo del logotipo se dibuja y se abre al recorrido. Sin JS se retira sola a los 3 s */
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-content:center;justify-items:center;gap:18px;background:var(--ink);color:var(--on-dark);transition:opacity .7s var(--ease-out),visibility 0s .7s;animation:intro-out .01s 3s forwards}
+.intro__logo{width:120px;height:63px;color:var(--on-dark)}
+.intro__r{stroke:var(--bronze)}
+.intro__logo path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1s var(--ease-out) forwards}
+.intro__logo .intro__r{animation-delay:.25s}.intro__logo .intro__e{animation-delay:.45s}
+.intro__name{margin:0;font:500 11px/1 var(--f-text);letter-spacing:.42em;padding-left:.42em;opacity:0;animation:fade .8s .5s var(--ease-out) forwards}
+.is-ready .intro{opacity:0;visibility:hidden}
+.is-reduced .intro{display:none}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:.8}}
+@keyframes intro-out{to{opacity:0;visibility:hidden}}
+/* Imágenes provisionales de los capítulos: en revisión (?review=1) se marca qué master falta */
+.is-review [data-master]::before{content:"PROVISIONAL · master " attr(data-master) " pendiente";position:absolute;z-index:2;left:10px;top:10px;padding:4px 7px;font:600 9px/1.2 var(--f-text);letter-spacing:.08em;color:#fff;background:#c0503f}
+
+/* S07 · contraplano (shot 05): la sede mira a la ciudad */
+.contact__img{grid-column:1/-1;position:relative;overflow:hidden;aspect-ratio:21/8;margin:calc(-1 * clamp(24px,4vw,56px)) 0 var(--s-6);background:var(--stone)}
+.contact__img img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+@media (max-width:760px){.contact__img{aspect-ratio:4/3}.contact__img img{object-position:62% 60%}}
+
+/* Hero: el oscurecido solo abajo a la izquierda, donde va el texto; la fachada respira */
+.stage__scrim--hero{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 0% 100%,rgba(12,11,10,.78) 0%,rgba(12,11,10,.42) 45%,rgba(12,11,10,0) 75%)}
+/* Móvil: marca reconocible (A.R.E. + INVESTSOCIAL en dos líneas) */
+@media (max-width:640px){
+  .brand__name{display:block;font-size:.5rem;letter-spacing:.36em;margin-top:3px}
+  .brand__mark{font-size:1.02rem}
+}
+/* Móvil vertical: la aérea y la plaza se encuadran como banda completa (edificio + acceso legibles), no como recorte de retícula */
+@media (max-aspect-ratio:4/5){
+  .layer[data-layer="s00"],.layer[data-layer="s01"]{max-width:none;inset:auto auto auto 50%;top:9vh;top:9svh;height:auto;aspect-ratio:1920/1071;object-fit:cover;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 82%,transparent 100%)}
+  .layer[data-layer="s00"]{width:200vw;margin-left:-100vw}
+  .layer[data-layer="s01"]{width:165vw;margin-left:-82.5vw;top:12vh;top:12svh}
+  .panel--hero{bottom:96px}
+}
+
+/* Capítulos S03–S05: plano general (08/10/12) y detalle (09/11/13) en composición editorial: mismo plano de
+   página, sin borde ni sombra; el detalle se alinea con el borde exterior y continúa la imagen hacia abajo */
+.area__media{position:relative;margin:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px}
+.area__media .area__img{grid-column:1/-1;aspect-ratio:5/4}
+.area__detail{grid-column:6/-1;position:relative;margin:0;overflow:hidden;aspect-ratio:16/9;background:var(--stone)}
+.area--reverse .area__media{order:2}
+.area--reverse .area__detail{grid-column:1/8}
+.area__detail img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);will-change:transform}
+.area__detail.mask{transition-delay:.2s}
+.vision__img img{object-position:50% 40%}
+/* Cierre · terraza */
+.closing{position:relative;min-height:92vh;min-height:92svh;display:grid;align-items:end;padding:clamp(72px,11vw,160px) var(--gutter);overflow:hidden;background:var(--ink);color:var(--on-dark)}
+.closing__img{position:absolute;inset:0;margin:0}
+.closing__img img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;transform:scale(1.12);will-change:transform}
+.closing__img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,11,10,.82) 0%,rgba(12,11,10,.35) 42%,rgba(12,11,10,0) 70%)}
+.closing__body{position:relative;z-index:1;max-width:40rem}
+.closing__body .h2{margin-bottom:var(--s-4)}
+.is-reduced .area__detail img,.is-reduced .closing__img img{transform:none}
+@media (max-width:860px){
+  .area__media .area__img{aspect-ratio:16/11}
+  .area__detail,.area--reverse .area__detail{grid-column:4/-1}
+  .area--reverse .area__media{order:0}
+  .closing{min-height:80vh;min-height:80svh}
+}
+/* Marca 2.0 (hoja interna) */
+.brand-card__stage--light{background:var(--bone);color:var(--on-light)}
+.brand-card__stage+.brand-card__stage{margin-top:2px}
+.brand-card__sym--wide{width:92px;height:48px}
+.brand-card__word--ink{color:var(--on-light)}
+.brand-card__word--blue{color:#2e52a3;font-family:var(--f-text);font-size:.72rem;letter-spacing:.42em}

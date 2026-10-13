@@ -1,0 +1,6 @@
+# PRE-LANZAMIENTO: nada indexable. Al publicar, sustituir por:
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://areinvestsocial.com/sitemap.xml
+User-agent: *
+Disallow: /
